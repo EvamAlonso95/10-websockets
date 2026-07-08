@@ -18,7 +18,6 @@
       "onFail": "download"
     }
   },
-  "type": "module",
   "devDependencies": {
     "@types/node": "^26.1.0",
     "rimraf": "^6.1.3",

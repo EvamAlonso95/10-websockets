@@ -16,9 +16,16 @@ wss.on("connection", function connection(ws) {
     });
     // ws.send(JSON.stringify(payload));
 
-    //Broadcast
+    //* Todos - incluyente (Broadcast)
+    // wss.clients.forEach(function each(client) {
+    //   if (client.readyState === WebSocket.OPEN) {
+    //     client.send(payload, { binary: false });
+    //   }
+    // });
+
+    //* Todos - excluyente (Broadcast)
     wss.clients.forEach(function each(client) {
-      if (client.readyState === WebSocket.OPEN) {
+      if (client !== ws && client.readyState === WebSocket.OPEN) {
         client.send(payload, { binary: false });
       }
     });
